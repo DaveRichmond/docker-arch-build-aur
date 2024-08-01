@@ -1,4 +1,4 @@
-FROM archlinux:latest
+FROM agners/archlinuxarm:latest
 
 RUN pacman -Syu --noconfirm --needed base base-devel devtools && \
     useradd -d /home/makepkg makepkg && \
