@@ -27,7 +27,6 @@ jobs:
           password: ${{ secrets.QUAY_PASS }}
       - name: Build container image and push to Quay.io
         run: |
-          docker pull agners/archlinuxarm:latest
           docker buildx build --platform linux/armv7,linux/arm64 . -t quay.io/daverichmond/arch-build-aur -t daverichmond/arch-build-aur
           docker push quay.io/daverichmond/arch-build-aur
       - name: Login to Dockerhub
