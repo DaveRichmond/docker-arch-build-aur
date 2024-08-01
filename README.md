@@ -1,12 +1,14 @@
-[![CI](https://github.com/valdar/docker-arch-build-aur/actions/workflows/ci.yml/badge.svg)](https://github.com/valdar/docker-arch-build-aur/actions/workflows/ci.yml)
+[![CI](https://github.com/daverichmond/docker-arch-build-aur/actions/workflows/ci.yml/badge.svg)](https://github.com/daverichmond/docker-arch-build-aur/actions/workflows/ci.yml)
+
+This fork enables building of arm images
 
 ### Build AUR packages
 
 The following command will download AUR package and build it:
 
 ```
-$ docker pull quay.io/valdr/arch-build-aur
-$ docker run --rm -v $(pwd):/pkg uay.io/valdr/arch-build-aur /bin/bash -c '/build-aur <package>'
+$ docker pull quay.io/daverichmond/arch-build-aur
+$ docker run --rm -v $(pwd):/pkg uay.io/daverichmond/arch-build-aur /bin/bash -c '/build-aur <package>'
 ```
 
 ### Build repo packages
@@ -14,8 +16,8 @@ $ docker run --rm -v $(pwd):/pkg uay.io/valdr/arch-build-aur /bin/bash -c '/buil
 The following command will download repo package and build it:
 
 ```
-$ docker pull quay.io/valdr/arch-build-aur
-$ docker run --rm -v $(pwd):/pkg quay.io/valdr/arch-build-aur /bin/bash -c '/build-repo <package>'
+$ docker pull quay.io/daverichmond/arch-build-aur
+$ docker run --rm -v $(pwd):/pkg quay.io/daverichmond/arch-build-aur /bin/bash -c '/build-repo <package>'
 ```
 
 ### Build PKGBUILD
@@ -23,8 +25,8 @@ $ docker run --rm -v $(pwd):/pkg quay.io/valdr/arch-build-aur /bin/bash -c '/bui
 The following command will build local PKGBUILD file (must reside in a folder mounted to /build):
 
 ```
-$ docker pull quay.io/valdr/arch-build-aur
-$ docker run --rm -v $(pwd):/pkg -v $(pwd):/build quay.io/valdr/arch-build-aur /bin/bash -c '/build-pkgbuild'
+$ docker pull quay.io/daverichmond/arch-build-aur
+$ docker run --rm -v $(pwd):/pkg -v $(pwd):/build quay.io/daverichmond/arch-build-aur /bin/bash -c '/build-pkgbuild'
 ```
 
 `.SRCINFO` file will be updated/created in /build directory.
